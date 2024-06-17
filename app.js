@@ -15,7 +15,13 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const courseRouter = require('./routes/course');
 
+const PORT = 4001;
+
 var app = express();
+
+app.listen(PORT , () => {
+  console.log('API Listening on PORT')
+});
 
 app.use(cors({ 
   origin: true,
