@@ -3,7 +3,13 @@ var app = express.Router();
 
 /* GET home page. */
 app.get('/', function(req, res, next) {
-  res.render('index', { title: 'API' });
+  res.send({
+    status: 200,
+    msg: "Successfully",
+    data: {
+      firstname : 'weera'
+    }
+  });
 });
 
 app.get('/:id', (req, res) => {
