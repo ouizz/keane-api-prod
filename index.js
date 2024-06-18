@@ -11,9 +11,9 @@ const bodyParser = require('body-parser')
 // const passport = require("passport");
 const db = require("./models/mongo");
 
-// const indexRouter = require('./routes/index');
-// const usersRouter = require('./routes/users');
-// const courseRouter = require('./routes/course');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const courseRouter = require('./routes/course');
 
 const PORT = 4001;
 
@@ -78,23 +78,9 @@ app.use(cookieParser("IMSECRETCODE"));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
-// app.use('/course' , courseRouter);
-
-/* GET home page. */
-app.get('/', function(req, res, next) {
-  res.send({
-    status: 200,
-    msg: "Successfully",
-    data: {
-      firstname : 'weera'
-    }
-  });
-});
-
-
-
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/course' , courseRouter);
 
 
 // catch 404 and forward to error handler
