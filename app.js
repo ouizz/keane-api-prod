@@ -8,12 +8,12 @@ const helmet = require("helmet");
 const session = require("express-session");
 const timeout = require('connect-timeout');
 const bodyParser = require('body-parser')
-const passport = require("passport");
+// const passport = require("passport");
 const db = require("./models/mongo");
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const courseRouter = require('./routes/course');
+// const indexRouter = require('./routes/index');
+// const usersRouter = require('./routes/users');
+// const courseRouter = require('./routes/course');
 
 const PORT = 4001;
 
@@ -30,15 +30,15 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization' , 'Origin']
 }));
 
-const corsConfig = {
-  origin: [
-    "*",
-    //"http://localhost:3000",
-    //"http://localhost:3001",
-  ],
-  // credentials: true,
-  // preflightContinue: true,
-};
+// const corsConfig = {
+//   origin: [
+//     "*",
+//     //"http://localhost:3000",
+//     //"http://localhost:3001",
+//   ],
+//   // credentials: true,
+//   // preflightContinue: true,
+// };
 
 db.mongoose.connect(db.url, {
   useNewUrlParser: false,
