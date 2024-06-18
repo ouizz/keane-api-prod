@@ -30,15 +30,15 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization' , 'Origin']
 }));
 
-// const corsConfig = {
-//   origin: [
-//     "*",
-//     //"http://localhost:3000",
-//     //"http://localhost:3001",
-//   ],
-//   // credentials: true,
-//   // preflightContinue: true,
-// };
+const corsConfig = {
+  origin: [
+    "*",
+    //"http://localhost:3000",
+    //"http://localhost:3001",
+  ],
+  // credentials: true,
+  // preflightContinue: true,
+};
 
 db.mongoose.connect(db.url, {
   useNewUrlParser: false,
