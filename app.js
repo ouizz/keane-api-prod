@@ -78,9 +78,24 @@ app.use(cookieParser("IMSECRETCODE"));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/course' , courseRouter)
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
+// app.use('/course' , courseRouter);
+
+/* GET home page. */
+app.get('/', function(req, res, next) {
+  res.send({
+    status: 200,
+    msg: "Successfully",
+    data: {
+      firstname : 'weera'
+    }
+  });
+});
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
